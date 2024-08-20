@@ -1,9 +1,49 @@
-/* Variables */
+@use 'sass:math' as math;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// Font
+$poppins: "Poppins", sans-serif;
 
 // Theme Colors
 $primary: #9e2b2b;
 $secondary: #14c9c9;
 
+// SASS maps
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "black": #161616,
+    "white": #f0f0f0
+);
+
+@debug map-get($colors, 'primary'); // access the value in map using 'map-get'.
+// Map has other functions such as 'map-has-key', 'map-remove', etc.
+
 // Spacing
 $basePad: 0.75rem;
-$mediumPad: 1rem;
+$pad-sm: math.div($basePad, 1.50); // dividing wont work. use math.div
+$pad-xs: math.div($basePad, 2.5);
+$mediumPad: $basePad * 1.25;
+$pad-lg: $basePad * 1.50;
+
+// Box Shadow
+$baseShad: 0 0 8px -4px #000;
+
+// Font Size
+$baseFont: 1rem;
+$font-sm: math.div($baseFont, 1.15);
+$font-md: $baseFont * 1.20;
+$font-lg: $baseFont * 1.40;
+
+// Border width
+$baseBorderWidth: 1px;
+
+// border round
+$rounded: 10px;
+$rounded-sm: $rounded * 0.50;
+
+
+
+// Debugging through the console
+@debug math.max(24, 54, 12, 76, 37)

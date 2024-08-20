@@ -1,0 +1,18 @@
+@use 'variables' as v;
+@use 'sass:color' as c;
+
+// Functions to get a complementary color from passed argument and LIGHTEN it.
+@function lighten-complementary($col) {
+    $complement: c.complement($col);
+    $lightend: lighten($complement, 30%); // `lighten` is not a sass:color function
+    @return $lightend;
+}
+
+;
+
+// Functions to get a complementary color from passed argument and DARKEN it.
+@function darken-complementary($col) {
+    $complement: c.complement($col);
+    $darkend: darken($complement, 20%); // `darken` is not a sass:color function
+    @return $darkend;
+}

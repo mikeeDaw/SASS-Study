@@ -1,0 +1,29 @@
+@use '../variables' as v;
+@use "../mixins" as m;
+@use '../functions' as f;
+
+@each $key, $val in v.$colors {
+    .btn-#{$key} {
+        margin-top: v.$basePad;
+        @include m.btn($val);
+
+    }
+
+    .btn-outlined-#{$key} {
+        margin-top: v.$basePad;
+        @include m.btn(#fff);
+        border: v.$baseBorderWidth solid $val;
+    }
+
+    .btn-complement-#{$key} {
+        margin-top: v.$basePad;
+        color: f.lighten-complementary($val);
+        @include m.btn($val);
+    }
+
+    .btn-darkened-#{$key} {
+        margin-top: v.$basePad;
+        color: f.darken-complementary($val);
+        @include m.btn($val);
+    }
+}

@@ -1,18 +1,23 @@
-@use 'base';
 @use 'variables' as vars;
+@use 'base';
+@use 'components/card';
+@use 'colors';
+@use 'components/button';
 
 // When using a constructs from '@use', create a namespace and
 // use the dot notation to access the variable, mixins, functions, etc.
 
 
 h1 {
-    &{
+    & {
         color: vars.$primary;
         padding: vars.$basePad;
     }
+
     a {
         color: vars.$secondary;
     }
+
     .classy {
         display: flex-grid;
     }

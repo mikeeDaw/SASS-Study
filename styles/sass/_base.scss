@@ -1,5 +1,36 @@
+@use 'variables' as v;
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: v.$poppins;
+}
+
+button {
+    text-decoration: none;
+    border: 0;
+}
+
+main {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: v.$basePad;
+    min-height: 100vh;
+}
+
+section {
+    background-color: beige;
+    width: 100%;
+    flex: 1 1;
+    padding: v.$mediumPad 0;
+
+    .card-list-wrapper {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-wrap: wrap;
+    }
 }

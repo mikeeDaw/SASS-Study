@@ -1,0 +1,48 @@
+@use 'variables' as v;
+
+// SASS Looping
+// This loop generates a class for each value in the map.
+// '@each' loops through every item in a map.
+@each $key, $val in v.$colors {
+
+    // to use the value in a class name, use '#{}'.
+    .text-#{$key} {
+        color: $val
+    }
+
+    .bg-#{$key} {
+        background-color: $val;
+    }
+
+    // This 'if' statement disables the creation of light and dark variations
+    // for the 'secondary' color.
+    @if($key !='secondary') {
+
+        // Light & Dark Variations
+        // '@for' loops with a counter.
+        // 'through' is inclusive, 'to' is exclusive.
+        @for $i from 1 through 9 {
+            .text-#{$key}-light-#{$i} {
+                color: mix(#FFF, $val, $i * 10%); // mix colors together.
+                // third param is the weight of how much the 1st param is mixed.
+            }
+
+            .bg-#{$key}-light-#{$i} {
+                color: mix(#FFF, $val, $i * 10%);
+            }
+
+            .text-#{$key}-dark-#{$i} {
+                color: mix(#000, $val, $i * 10%);
+            }
+
+            .bg-#{$key}-dark-#{$i} {
+                color: mix(#000, $val, $i * 10%);
+            }
+        }
+    }
+
+    @else {
+        @debug "Secondary was skipped making color variations."
+    }
+
+}

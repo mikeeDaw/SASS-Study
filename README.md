@@ -15,3 +15,15 @@
 > *Challenges* <br>
 > • add `"gulp":"gulp"` in `scripts` section in `package.json` file & use the `npm run gulp` command. <br>
 > • add `"type":"module"` in `package.json`
+
+#### Topics
+
+• Variables - `_variables.scss` <br>
+• Nested Rules - `_card.scss` <br>
+• SASS Math - `_variables.scss` <br>
+• Maps - `_variables.scss` <br>
+• Loops - `_colors.scss` <br>
+• Conditionals - `_colors.scss` <br>
+• Parent Selector - `_card.scss` <br>
+• Mixins - `_mixins.scss` <br>
+• Functions - `_functions.scss` <br>

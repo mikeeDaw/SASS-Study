@@ -1,0 +1,28 @@
+@use 'variables' as v;
+
+// Mixins can have parameters and default values on them.
+// to use mixins, add the '@include' directive and the mixin name.
+
+// To invoke the default value, call it like this: '@include m.btn'. (no parenthesis)
+@mixin btn($bg-col: #5fe421) {
+    padding: v.$pad-xs v.$pad-lg;
+    border-radius: v.$rounded-sm;
+    border: 0;
+    align-self: flex-end;
+    background-color: $bg-col;
+    font-weight: 500;
+    transition: all .4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    cursor: pointer;
+}
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-justify-align($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}

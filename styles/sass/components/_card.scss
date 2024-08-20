@@ -1,0 +1,49 @@
+@use '../variables' as v;
+@use "../mixins" as m;
+
+.card-wrapper {
+
+    display: flex;
+    flex: 0 0 33%;
+    align-self: stretch;
+    padding: v.$basePad - .4;
+
+    .card {
+
+        // '&' references to the parent selector which in this case, is '.card'.
+        & {
+            @include m.flex-justify-align(center, start);
+            flex-direction: column;
+            padding: v.$basePad;
+            border: v.$baseBorderWidth solid #c0c0c073;
+            box-shadow: v.$baseShad;
+            border-radius: v.$rounded;
+            transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+            gap: 10px;
+        }
+
+        &:hover {
+            background-color: #000;
+        }
+
+        &:hover>* {
+            color: #fff
+        }
+
+        &:hover button {
+            background-color: #fff;
+            color: #000
+        }
+
+        // Nesting. this is equivalent to '.card .card-title'.
+        .card-title {
+            font-size: v.$font-md;
+            padding-bottom: v.$pad-sm;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: v.$font-sm;
+        }
+    }
+}
