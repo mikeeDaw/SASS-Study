@@ -1,0 +1,101 @@
+// Making a CLASS-based responsiveness using a flex grid model.
+
+@use 'sass:math' as m;
+@use 'breakpoints' as b;
+
+$grid-cols: 12; // # of grids
+$grid-gaps: (
+    "0" : 0,
+    "1" : 10px,
+    "2" : 15px,
+    "3" : 20px,
+    "4" : 25px,
+    "5" : 30px,
+);
+
+// Base Layout classes
+.container {
+    // .container brings content into the central column of the page & give a max width.
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto; // centers the content in a column
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-flow: row wrap; // `flex-flow` specifies direction of flex container & wrapping. This means if content overflows, it goes below creating a new row.
+}
+
+// Grid gaps
+@each $key, $val in $grid-gaps {
+
+    .gap-#{$key}>* {
+        padding: $val;
+
+        // NOTE: '>*' means all descendants of the element with the class gets the styling.
+        //       why padding instead of gap? It is to also have a spacing on both x and y axis
+        //       unlike gap which only spaces one axis depending on the flex direction.
+    }
+
+    // Remove the padding at the left most and right most part of the container
+    .gap-#{$key} {
+        margin-left: -$val;
+        margin-right: -$val;
+    }
+}
+
+// Column Classes
+// Same concept with '@content'. All rules inside will be placed on the called mixin in the place
+// of the '@content' directive.
+@include b.xs {
+    @for $i from 1 through $grid-cols {
+        .col-xs-#{$i} {
+            // You can make a mixins on these rule since it is reused for all the breakpoints.
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: m.div($i * 100%, $grid-cols ); // 100%/12 = 8.33%, 200/12 = 16.67%, ... , 1200/12 = 100%. 
+        }
+    }
+}
+
+@include b.sm {
+    @for $i from 1 through $grid-cols {
+        .col-sm-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: m.div($i * 100%, $grid-cols );
+        }
+    }
+}
+
+@include b.md {
+    @for $i from 1 through $grid-cols {
+        .col-md-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: m.div($i * 100%, $grid-cols );
+        }
+    }
+}
+
+@include b.lg {
+    @for $i from 1 through $grid-cols {
+        .col-lg-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: m.div($i * 100%, $grid-cols );
+        }
+    }
+}
+
+@include b.xl {
+    @for $i from 1 through $grid-cols {
+        .col-xl-#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: m.div($i * 100%, $grid-cols );
+        }
+    }
+}

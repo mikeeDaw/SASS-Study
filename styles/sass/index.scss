@@ -3,6 +3,9 @@
 @use 'components/card';
 @use 'colors';
 @use 'components/button';
+@use 'utilities';
+@use 'grid';
+@use 'components/navbar';
 
 // When using a constructs from '@use', create a namespace and
 // use the dot notation to access the variable, mixins, functions, etc.

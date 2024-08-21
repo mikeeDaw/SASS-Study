@@ -1,6 +1,8 @@
 @use 'variables' as v;
 @use 'sass:color' as c;
 
+// Functions vs Mixins: functions return a single value.
+
 // Functions to get a complementary color from passed argument and LIGHTEN it.
 @function lighten-complementary($col) {
     $complement: c.complement($col);
@@ -16,3 +18,5 @@
     $darkend: darken($complement, 20%); // `darken` is not a sass:color function
     @return $darkend;
 }
+
+;

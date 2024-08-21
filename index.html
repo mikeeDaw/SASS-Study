@@ -9,14 +9,31 @@
 </head>
 
 <body>
+    <nav class="navbar-white p-1">
+        <!--   
+        Can also put inside a container and use nesting to extend the rules.     
+        <div class="container">
+            <span class="site-title">JeSASS Christ</span>
+            <span>Panu gumamit ng sass</span>
+        </div> 
+        -->
+        <span class="site-title">JeSASS Christ</span>
+        <span>Panu gumamit ng sass</span>
+
+    </nav>
     <main class="">
-        <h1>
+        <h3>
             <span>Hallo</span>
-            <a href="#"> DAMN</a>
-        </h1>
+        </h3>
 
         <section>
+            <!-- Media Query Responsive -->
+            <span class="p-1">
+                Using Media Query Responsiveness
+            </span>
+
             <div class="card-list-wrapper">
+
                 <div class="card-wrapper">
                     <div class="card bg-white">
                         <span class="card-title text-black-light-4">
@@ -67,11 +84,70 @@
                         <span class="card-desc text-primary-dark-2">
                             Reprehenderit exercitation cupidatat occaecat proident mollit magna irure esse.
                         </span>
-                        <button class="btn-complement-primary">
+                        <button class="btn-complement-primary opacity-60">
                             Let's Go!
                         </button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Grid Responsive -->
+            <span class="p-1">
+                Using Grid Responsiveness
+            </span>
+
+            <div class="card-list-wrapper">
+                <div class="row gap-1">
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="card bg-black">
+                            <span class="card-title text-white">
+                                High
+                            </span>
+                            <span class="card-desc text-white-dark-4">
+                                Reprehenderit exercitation cupidatat occaecat proident mollit magna irure esse. Cillum
+                                in cillum commodo officia in minim veniam id adipisicing
+                            </span>
+                            <button class="btn-white text-black">
+                                Let's Go!
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                        <div class="card bg-black">
+                            <span class="card-title text-white">
+                                Speed
+                            </span>
+                            <span class="card-desc text-white-dark-4">
+                                Reprehenderit exercitation cupidatat occaecat proident mollit magna irure esse. Cillum
+                                in cillum commodo officia in minim veniam id adipisicing
+                            </span>
+                            <button class="btn-white text-black">
+                                Let's Go!
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-lg-4 ">
+                        <div class="card bg-black">
+                            <span class="card-title text-white">
+                                BB
+                            </span>
+                            <span class="card-desc text-white-dark-4">
+                                Reprehenderit exercitation cupidatat occaecat proident mollit magna irure esse. Cillum
+                                in cillum commodo officia in minim veniam id adipisicing
+                            </span>
+                            <button class="btn-white text-black">
+                                Let's Go!
+                            </button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
             </div>
         </section>
     </main>

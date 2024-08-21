@@ -1,0 +1,43 @@
+// '@extends' are similar to mixins that allows to inherit properties of other rules.
+// Extend vs. Mixin:
+//   • Extend don't pass arguments
+//   • Is compiled differently than mixins. ( .flex-layout, .navbar { [properties] } )
+//     the class who extends is added to the rule declaration in css file.
+
+// Only method (I know) to extend classes from different files is to '@use '[filepath]' as *'
+// and then '@extend .[classname]'.
+
+// Using the '.' prefix, the compiler adds it to the final css file making it an actual class.
+// But if its purpose is only for extending and not going to be used on its own,
+// use the '%' prefix to make it a placeholder rule and will not appear in the css file.
+
+@use '../variables' as v;
+
+%flex-layout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar {
+    @extend %flex-layout;
+    padding: v.$basePad v.$pad-lg;
+    box-shadow: v.$baseShad;
+
+    .site-title {
+        font-size: v.$font-lg;
+        font-weight: 600;
+    }
+
+    .container {
+        @extend %flex-layout;
+    }
+}
+
+@each $key, $val in v.$colors {
+    .navbar-#{$key} {
+        @extend .navbar;
+        background-color: $val;
+    }
+}

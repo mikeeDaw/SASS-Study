@@ -16,7 +16,14 @@
 > • add `"gulp":"gulp"` in `scripts` section in `package.json` file & use the `npm run gulp` command. <br>
 > • add `"type":"module"` in `package.json`
 
-#### Topics
+### Setting Up Unused CSS Purger
+
+• Install a gulp plugin 'Purge CSS' <br>
+  \- use the command `npm install gulp-purgecss --save-dev` on terminal <br>
+•  Update the `gulpfile.js` file
+• Re-run the gulp process.
+
+### Topics
 
 • Variables - `_variables.scss` <br>
 • Nested Rules - `_card.scss` <br>
@@ -27,3 +34,13 @@
 • Parent Selector - `_card.scss` <br>
 • Mixins - `_mixins.scss` <br>
 • Functions - `_functions.scss` <br>
+• Utility Classes - `_utilities.scss` <br>
+• Media Queries - `_breakpoints.scss` and `_card.scss` <br>
+• Grid System - `_grid.scss` <br>
+• Extend - `_navbar.scss` <br>
+• CSS Purging - `gulpfile.js` <br>
+
+
+#### NOTE! <br>
+\- "Live Server" extension in vs code is used to run the website. <br>
+\- To import and use the created CSS library, [Follow This](https://www.youtube.com/watch?v=btMR5e4ZRM4&list=PL4cUxeGkcC9jxJX7vojNVK-o8ubDZEcNb&index=21 "Library Tutorial")

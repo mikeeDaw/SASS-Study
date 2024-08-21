@@ -1,0 +1,62 @@
+// Utility Classes
+// - like m-3, pl-5, opacity-70
+
+@use "sass:math" as m;
+@use "variables" as v;
+
+$utilities: (
+    "padding": ("prefix": "p", // The classname prefix. The 'p' in p-8.
+        "values": ("0": 0,
+            "1": v.$basePad,
+            "2": v.$basePad * 2,
+            "3": v.$basePad * 4,
+            "4": v.$basePad * 6,
+            "5": v.$basePad * 8,
+            "xs": v.$pad-xs ),
+    ),
+    "padding-left": ("prefix": "pl", // The classname prefix. The 'p' in p-8.
+        "values": ("0": 0,
+            "1": v.$basePad,
+            "2": v.$basePad * 2,
+            "3": v.$basePad * 4,
+            "4": v.$basePad * 6,
+            "5": v.$basePad * 8,
+        ),
+    ),
+    "opacity": ("prefix" : "opacity",
+        "values" : ("0": 0,
+            "10": 0.1,
+            "20": 0.2,
+            "30": 0.3,
+            "40": 0.4,
+            "50": 0.5,
+            "60": 0.6,
+            "70": 0.7,
+            "80": 0.8,
+            "90": 0.9,
+            "100": 1,
+        ))
+);
+
+@each $prop, $map in $utilities {
+    $prefix: map-get($map, "prefix");
+    $values: map-get($map, "values");
+
+    @each $k, $v in $values {
+        @if($k =="default") {
+
+            // If there is a 'default', this becomes .p
+            .#{$prefix} {
+                #{prop}: $v;
+            }
+        }
+
+        @else {
+
+            // This becomes like .p-2
+            .#{$prefix}-#{$k} {
+                #{$prop}: $v;
+            }
+        }
+    }
+}

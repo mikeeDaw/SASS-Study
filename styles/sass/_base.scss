@@ -1,4 +1,5 @@
 @use 'variables' as v;
+@use 'mixins' as m;
 
 * {
     padding: 0;
@@ -17,11 +18,13 @@ main {
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    padding: v.$basePad;
-    min-height: 100vh;
+    padding: v.$basePad * 2 v.$basePad;
+    height: fit-content;
 }
 
 section {
+    @include m.flex-justify-align(start, start);
+    flex-flow: column wrap;
     background-color: beige;
     width: 100%;
     flex: 1 1;
@@ -32,5 +35,6 @@ section {
         justify-content: start;
         align-items: start;
         flex-wrap: wrap;
+        width: 100%;
     }
 }
